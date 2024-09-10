@@ -2,6 +2,11 @@
 {% block title %} Accueil {% endblock %}
 
 {% block content %}
-<h1> Accueil </h1>
+    <h1> Accueil </h1>
+    {% if utilisateur.is_authenticated %}
+        <p> Bonjour {{utilisateur.username}} </p>
+    {% else %}
+        <p> Bonjour anon, tu dois créer un profil pour créer des tickets </p>
+    {% endif %}
 
 {% endblock %}
