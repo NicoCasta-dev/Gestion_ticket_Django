@@ -14,24 +14,22 @@
 {% block content %}
     <h1>Liste des tickets ouverts</h1>
     <hr>
-    <ul>
         <div class="container py-5"> 
             <div class="row row-cols-1 row-cols-md-3 g-4">
-            {% for article in articles %}
+            {% for ticket in tickets %}
             <div class="col">
                 <div class="card h-100">
-                    <img src="image-ticket.jpg" class="card-img-top" alt="...">
+                    <img src={% static "image-ticket.jpg" %} class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">{{tickets.titre}}</h5>
-                      <p class="card-text">{{tickets.description}}</p>
+                      <h5 class="card-title">{{ticket.titre}}</h5>
+                      <p class="card-text">{{ticket.description}}</p>
                     </div>
                     <div class="card-footer">
-                      <small class="text-body-secondary">{{tickets.date}}</small>
+                      <small class="text-body-secondary">{{ticket.date}}</small>
                     </div>
                 </div>
             </div>
             {% endfor %}
             </div>
         </div>
-    </ul>
 {% endblock %}

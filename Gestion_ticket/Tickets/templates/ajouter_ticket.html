@@ -9,30 +9,7 @@
 <form method ="POST">
 {% csrf_token %}
 
-<div class="container">
-    <hr>
-    <br><br>
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control custom-sm" id="titre" name="titre" placeholder="Titre">
-        <label for="title"></label>
-    </div>
-    <div class="form-floating mb-3">
-        <textarea class="form-control custom-height" id="description" name="description" placeholder="Description"></textarea>
-        <label for="content"></label>
-    </div>
-    <div class="form-floating mb-3">
-        <input type="date" class="form-control custom-sm" id="date" name="date" placeholder="Date">
-        <label for="date"></label>
-    </div>
-    <div class="form-floating mb-3">
-        <select class="form-select form-control" id="utilisateur" name="utilisateur">
-            <option selected disabled>Choisir un utilisateur</option>
-                {% for auteur in author %}
-                    <option value="{{ utilisateur.first_name }} ">{{ utilisateur.first_name }}</option>
-                {% endfor %}
-        </select>
-    </div>
-<div>
+{{form.as_p}}
 
 <div class="button-container">
     <button type="submit" class="btn"> Creer ticket </button>

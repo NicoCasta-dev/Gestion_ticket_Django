@@ -5,7 +5,7 @@ from .models import Tickets_Ouverts, utilisateurs
 class TicketsOuvertsForm(ModelForm):
     class Meta:
         model = Tickets_Ouverts
-        fields = '__all__'
+        fields = ['titre', 'description', 'date']
 
 class UtilisateursForm(ModelForm):
     class Meta:
